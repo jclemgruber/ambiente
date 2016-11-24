@@ -2,7 +2,7 @@
 # Ambiente 1.0
 # Nodejs as Base Image (Node Packages)
 ######
-FROM ambiente/nodejs
+FROM ambiente/quasar-cordova
 
 MAINTAINER Joao Lemgruber <jclemgruber@gmail.com>
 

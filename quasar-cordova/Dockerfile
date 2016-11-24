@@ -1,12 +1,12 @@
 #####
 # Ambiente 1.0
-# Android as Base Image
+# Nodejs as Base Image (Node Packages)
 ######
-FROM ambiente/android
+FROM ambiente/nodejs
 
 # Repository/Image Maintainer
 MAINTAINER Joao Lemgruber <jclemgruber@gmail.com>
 
 WORKDIR "/var/www/app"
 
-RUN npm i -g --unsafe-perm cordova
+RUN npm i -g --unsafe-perm quasar-cli cordova

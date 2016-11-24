@@ -75,13 +75,13 @@ alias vue=vue
 
 # Quasar
 function quasar() {
-	docker run -it --rm -v $(pwd):/var/www/app -v $A_NPM_CACHE_MOUNT -v $A_SSH_NODE_MOUNT ambiente/quasarframework quasar "$@"
+	docker run -it --rm -v $(pwd):/var/www/app -v $A_NPM_CACHE_MOUNT -v $A_SSH_NODE_MOUNT ambiente/quasar-cordova quasar "$@"
 }
 alias quasar=quasar
 
 # Cordova
 function cordova() {
-	docker run -it --rm -v $(pwd):/var/www/app -v $A_NPM_CACHE_MOUNT -v $A_SSH_NODE_MOUNT ambiente/cordova cordova "$@"
+	docker run -it --rm --privileged -v $(pwd):/var/www/app -v $A_NPM_CACHE_MOUNT -v $A_SSH_NODE_MOUNT ambiente/android cordova "$@"
 }
 alias cordova=cordova
 

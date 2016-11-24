@@ -11,7 +11,7 @@ REPOSITORIES=$1
 
 # enable all repositories if any specified
 if [[ -z $REPOSITORIES ]]; then
-    REPOSITORIES="nodejs quasarframework java"
+    REPOSITORIES="nodejs quasar-cordova java android"
 fi
 
 # for returning later to the main directory
