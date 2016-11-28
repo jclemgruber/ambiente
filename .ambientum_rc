@@ -49,6 +49,12 @@ mkdir -p $A_COMPOSER_CACHE
 # }
 # alias ape=ape
 
+# Android
+function android() {
+	docker run -it --rm --privileged -v $(pwd):/var/www/app -v /dev/bus/usb:/dev/bus/usb -v $A_NPM_CACHE_MOUNT -v $A_SSH_NODE_MOUNT ambiente/android /bin/bash
+}
+alias android=android
+
 # Node
 function node() {
 	docker run -it --rm -v $(pwd):/var/www/app -v $A_NPM_CACHE_MOUNT -v $A_NPM_CONFIG_MOUNT -v $A_SSH_NODE_MOUNT ambiente/nodejs node "$@"
@@ -81,7 +87,7 @@ alias quasar=quasar
 
 # Cordova
 function cordova() {
-	docker run -it --rm --privileged -v $(pwd):/var/www/app -v $A_NPM_CACHE_MOUNT -v $A_SSH_NODE_MOUNT ambiente/android cordova "$@"
+	docker run -it --rm --privileged -v $(pwd):/var/www/app -v /dev/bus/usb:/dev/bus/usb -v $A_NPM_CACHE_MOUNT -v $A_SSH_NODE_MOUNT ambiente/android cordova "$@"
 }
 alias cordova=cordova
 
